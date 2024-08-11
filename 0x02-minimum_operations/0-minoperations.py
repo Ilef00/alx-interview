@@ -89,7 +89,7 @@ def minOperations(n: int) -> int:
     factors: Dict[int, int] = prime_factors(n)
     number_of_operations: int = 0
 
-    for factor in factors:
-        number_of_operations += factor * factors[factor]
+    for factor, count in factors.items():
+        number_of_operations += factor * count
 
     return number_of_operations
