@@ -58,7 +58,7 @@ def prime_factors(n: int) -> Dict[int, int]:
     return prime_numbers
 
 
-def minOperations(n: int) -> int:
+def min_operations(n: int) -> int:
     """
     Calculates the minimum number of operations needed to get
     exactly `n` 'H' characters in the file using only "Copy All"
