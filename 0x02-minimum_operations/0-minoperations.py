@@ -40,14 +40,19 @@ def prime_factors(n: int) -> Dict[int, int]:
         {2: 1, 3: 2}
     """
     prime_numbers: Dict[int, int] = {}
+    divisor: int = 2
 
-    for i in range(2, n + 1):
-        while n % i == 0:
-            if i in prime_numbers:
-                prime_numbers[i] += 1
+    while divisor * divisor <= n:
+        while n % divisor == 0:
+            if divisor in prime_numbers:
+                prime_numbers[divisor] += 1
             else:
-                prime_numbers[i] = 1
-            n //= i
+                prime_numbers[divisor] = 1
+            n //= divisor
+        divisor += 1
+
+    if n > 1:
+        prime_numbers[n] = 1
 
     return prime_numbers
 
@@ -87,5 +92,3 @@ def minOperations(n: int) -> int:
         number_of_operations += factor * factors[factor]
 
     return number_of_operations
-
-
