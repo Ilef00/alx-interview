@@ -2,9 +2,9 @@
 
 """ Minimum operations solution  """
 
-def prime_factors(n: int) -> dict[int, int]:
 
-"""
+def prime_factors(n: int) -> dict[int, int]:
+    """
     Computes the prime factorization of a given integer.
     Args:
         n (int): The integer to factorize.
@@ -28,7 +28,6 @@ def prime_factors(n: int) -> dict[int, int]:
 
 
 def minOperations(n: int) -> int:
-
     """
     Calculate the minimum number of operations needed to get
     exactly `n` H characters in the file using only "Copy All"
@@ -41,14 +40,14 @@ def minOperations(n: int) -> int:
         int: The minimum number of operations required to achieve
         exactly `n` H characters, or 0 if it is not possible.
     """
-    
+
     if n <= 1:
         return 0
 
-    factors: dict[int ,int] = prime_factors(n)
+    factors: dict[int, int] = prime_factors(n)
     number_of_operations: int = 0
-    
+
     for i in factors:
-        number_of_operations +=  i * factors[i]
+        number_of_operations += i * factors[i]
 
     return number_of_operations
