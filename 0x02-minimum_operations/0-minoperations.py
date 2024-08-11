@@ -1,6 +1,27 @@
 #!/usr/bin/python3
 
-""" Minimum operations solution  """
+
+"""
+Minimum Operations Solution
+
+This module provides a solution to determine the minimum number
+of operations needed to achieve exactly `n` 'H' characters in a file.
+The operations allowed are "Copy All" and "Paste".
+The module includes two functions:
+
+1. prime_factors(n: int) -> dict[int, int]
+   - Computes the prime factorization of a given integer `n`.
+   - Returns a dictionary where keys are the prime factors and values
+   are the counts of those factors.
+
+2. minOperations(n: int) -> int
+   - Calculates the minimum number of operations needed to get exactly
+   `n` 'H' characters.
+   - Uses the results from `prime_factors` to determine the total
+   number of operations required.
+   - Returns the minimum number of operations or 0 if `n` is less than
+   or equal to 1.
+"""
 
 
 def prime_factors(n: int) -> dict[int, int]:
